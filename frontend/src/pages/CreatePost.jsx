@@ -50,7 +50,7 @@ const CreatePost = () => {
         const response = await fetch('http://localhost:8080/api/v1/post', {
           method: 'POST',
           headers: {
-            'Content-type': 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify(form)
         })
@@ -62,11 +62,13 @@ const CreatePost = () => {
       } finally {
         setLoading(false);
       }
+    } else {
+      alert('Please enter a prompt')
     }
   }
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name] : e.target.value})
+    setForm({ ...form, [e.target.name]: e.target.value})
   }
 
   const handleSurpriseMe = () => {
